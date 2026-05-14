@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;600;800&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#65334D",
+            "on-primary": "#ffffff",
+            "secondary": "#934683",
+            "on-secondary": "#ffffff",
+            "tertiary": "#4A2538",
+            "on-tertiary": "#ffffff",
+            "surface": "#FDFBFE",
+            "on-surface": "#2A1621",
+            "on-surface-variant": "#6D5A64",
+            "background": "#FDFBFE",
+            "on-background": "#2A1621",
+            "outline": "#8D7E86",
+            "outline-variant": "#DED0D6",
+            "surface-container-low": "#F9F4F7",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-container": "#F4EEF1",
+            "surface-container-high": "#EFE8EB",
+            "surface-container-highest": "#EAE2E5",
+            "surface-bright": "#FDFBFE",
+            "surface-dim": "#E2D9DC",
+            "muted-plum": "#65334D",
+            "warm-beige": "#F9F4F7",
+            "matte-black": "#2A1621",
+            "ivory-canvas": "#FDFBFE"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "unit": "8px",
+            "section-gap": "120px",
+            "section-gap-lg": "200px",
+            "container-max": "1440px",
+            "margin-edge": "24px",
+            "margin-edge-md": "80px",
+            "gutter": "48px"
+          },
+          "fontFamily": {
+            "display-xl": ["Noto Serif"],
+            "label-sm": ["Manrope"],
+            "body-md": ["Manrope"],
+            "headline-md": ["Noto Serif"],
+            "body-lg": ["Manrope"],
+            "headline-lg": ["Noto Serif"]
+          },
+          "fontSize": {
+            "display-xl": ["clamp(3rem, 10vw, 96px)", { "lineHeight": "1.05", "letterSpacing": "-0.03em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.2em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "1.8", "fontWeight": "400" }],
+            "headline-md": ["clamp(24px, 5vw, 36px)", { "lineHeight": "1.2", "fontWeight": "400" }],
+            "body-lg": ["clamp(18px, 3vw, 20px)", { "lineHeight": "1.7", "fontWeight": "400" }],
+            "headline-lg": ["clamp(32px, 8vw, 56px)", { "lineHeight": "1.1", "fontWeight": "400" }]
+          },
+          "animation": {
+            "fade-up": "fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+            "fade-in": "fadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards"
+          },
+          "keyframes": {
+            "fadeUp": {
+              "0%": { opacity: "0", transform: "translateY(40px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" }
+            },
+            "fadeIn": {
+              "0%": { opacity: "0" },
+              "100%": { opacity: "1" }
+            }
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .reveal-delay-1 {
+      animation-delay: 0.2s;
+    }
+
+    .reveal-delay-2 {
+      animation-delay: 0.4s;
+    }
+
+    .reveal-delay-3 {
+      animation-delay: 0.6s;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::selection {
+      background: rgba(147, 70, 131, 0.2);
+      color: #65334D;
+    }
+
+    .hover-lift {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-8px);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .cinematic-wrapper {
+      position: relative;
+      overflow: hidden;
+      background: #E0D0DA;
+    }
+
+    .cinematic-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, rgba(42, 22, 33, 0.05));
+      pointer-events: none;
+    }
+
+    /* New Navbar Styles */
+    #mobile-menu {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #mobile-menu.hidden-nav {
+      transform: translateX(100%);
+    }
+
+    #main-header {
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="text-matte-black font-body-md antialiased">
+  <!-- TopNavBar -->
+  <!-- BEGIN: MainHeader -->
+  <header class="w-full py-4 sticky top-0 z-50 bg-transparent" id="main-header">
+    <div class="w-full px-4 md:px-12">
+      <nav
+        class="flex items-center justify-between px-4 md:px-8 py-2 bg-primary lg:bg-transparent backdrop-blur-3xl saturate-150 rounded-full border border-white/40 shadow-[0_8px_32px_0_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.3)]">
+        <!-- Logo -->
+        <div class="text-xl font-bold tracking-tight shrink-0">
+          <a href="home.html">
+            <img alt="Schildersbedrijf Jorieke de Visser Logo"
+              class="h-11 w-11 rounded-full object-contain border-2 border-white/40 shadow-md"
+              src="./images/logo.jpg">
+          </a>
+        </div>
+
+        <!-- Desktop Pill Navigation -->
+        <div class="hidden lg:flex items-center gap-1 bg-black p-1 rounded-full border border-gray-800">
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="home.html"><span class="mr-2 text-[10px]">🖌️</span>Home</a>
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="interior.html"><span class="mr-2 text-[10px]">🖌️</span>Binnenschilderwerk</a>
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="exterior.html"><span class="mr-2 text-[10px]">🖌️</span>Buitenschilderwerk</a>
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="about.html"><span class="mr-2 text-[10px]">🖌️</span>Over Jorieke</a>
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="contact.html"><span class="mr-2 text-[10px]">🖌️</span>Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-white hover:bg-white/20 rounded-full transition-colors"
+          aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-primary hidden-nav lg:hidden">
+      <div class="flex flex-col h-full p-8">
+        <div class="flex justify-between items-center mb-12">
+          <div class="text-xl font-bold tracking-tight text-white">Jorieke de Visser</div>
+          <button id="close-menu-btn" class="p-2 text-white hover:bg-black/5 rounded-full transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="flex flex-col space-y-6 text-3xl font-light tracking-tight text-white/90">
+          <a href="home.html"
+            class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+              class="mr-4 text-lg">🖌️</span>Home</a>
+          <a href="interior.html"
+            class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+              class="mr-4 text-lg">🖌️</span>Binnenschilderwerk</a>
+          <a href="exterior.html"
+            class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+              class="mr-4 text-lg">🖌️</span>Buitenschilderwerk</a>
+          <a href="about.html"
+            class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+              class="mr-4 text-lg">🖌️</span>Over Jorieke</a>
+          <a href="contact.html"
+            class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+              class="mr-4 text-lg">🖌️</span>Contact</a>
+        </nav>
+        <div class="mt-auto pt-12 border-t border-white/10">
+          <p class="text-sm uppercase tracking-widest text-white/50 mb-4">Contact</p>
+          <a href="mailto:Schildersbedrijfjorieke@gmail.com"
+            class="text-lg block text-white">Schildersbedrijfjorieke@gmail.com</a>
+          <a href="tel:0637279700" class="text-lg block mt-2 text-white">06-37279700</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Personal Story Section -->
+    <section class="py-16 md:py-section-gap px-6 md:px-margin-edge md:px-margin-edge-md max-w-container-max mx-auto pt-32 md:pt-40 reveal-on-scroll">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <div class="lg:col-span-6 flex flex-col justify-center order-2 lg:order-1">
+          <h2 class="font-headline-md text-headline-md mb-8">Personal Story</h2>
+          <div class="space-y-6 text-on-surface-variant font-body-md leading-relaxed reveal-on-scroll">
+            <p>Hallo, ik ben Jorieke de Visser, geboren en getogen op Goeree-Overflakkee. Sinds 2017 volg ik mijn grote
+              passie: schilderen. Al vanaf het begin droomde ik ervan om mijn eigen bedrijf te starten, en in 2024 werd
+              die droom werkelijkheid.</p>
+            <p>Mijn opleiding volgde ik aan het Da Vinci College in Dordrecht (niveau 1, 2 en 3) en daarna aan Nimeto in
+              Utrecht (niveau 4). Met deze kennis en ervaring kan ik uw huis of pand omtoveren met vakwerk waar u
+              jarenlang plezier van heeft.</p>
+            <p>Ik hou van uitdagingen en vind het geweldig om samen met klanten hun ideeën tot leven te brengen. Of het
+              nu gaat om een frisse lik verf in de woonkamer of een volledige schilderbeurt van uw woning, ik zorg
+              altijd voor een persoonlijke aanpak en oog voor detail.</p>
+            <p>Buiten het schilderen hou ik van reizen en nieuwe mensen en culturen leren kennen. Ik geloof dat we veel
+              van elkaar kunnen leren. Daarnaast ben ik een familiemens en vind ik het fijn om actief bezig te zijn met
+              vrienden.</p>
+            <p>Ik blijf mezelf ontwikkelen in het schildersvak door cursussen te volgen en nieuwe technieken uit te
+              proberen. In maart 2026 hoop ik te starten met de NCE-opleiding Erfgoedschilder, zodat ik mijn vakkennis
+              nog verder kan uitbreiden.</p>
+          </div>
+        </div>
+        <div class="lg:col-span-5 lg:col-start-8 order-1 lg:order-2 reveal-on-scroll reveal-delay-1 group">
+          <div class="cinematic-wrapper aspect-[3/4] overflow-hidden">
+            <img alt="Portrait of Jorieke de Visser" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[3000ms] ease-out"
+              src="https://lh3.googleusercontent.com/aida/ADBb0uhRzh-SNWk3fjC9HHaso1jGJzcuwRGH98OgrMz8pMq2Sc_5xTNjhS6ZzA52IDtkdsMkuR1bobfr8AJwBCHPOfzOfat34m9a_BKv8cKYyPN0blkB8hW9bhiBrY7FNup5Az2g8we25NN8VqPL39inNy2xPl8gQWO8NhPaf9KUNMK4gO6d7Eb4fmApUaK1oIM3SJ4sS5rbjHIy5NB4JcJhIegnjcRrFFk0X9rfFPwQJgyApClASb7Mpd8-1jdFrdbyjQIDO3Df3ieBt0I" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Family/Brothers Section -->
+    <section class="py-16 md:py-section-gap bg-surface-container-low px-6 md:px-margin-edge">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <p class="font-body-md text-on-surface-variant leading-relaxed">
+          Ik ben niet de enige binnen de familie met het bouwvirus. Drie van mijn broers zijn eveneens zelfstandig
+          ondernemer en actief in de bouw. Ieder heeft zijn eigen specialisme: Afbouwbedrijf De Visser, JDV
+          Elektrotechniek en Bouwbedrijf De Visser.
+        </p>
+        <p class="font-body-md text-on-surface-variant mt-6 leading-relaxed">
+          Dankzij deze korte lijnen en de vertrouwde samenwerking kunnen wij elkaar waar nodig versterken. Dit zorgt
+          ervoor dat u verzekerd bent van vakmanschap, kwaliteit en een soepel verloop van de werkzaamheden.
+        </p>
+      </div>
+      <!-- Partner Grid -->
+      <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <!-- Afbouwbedrijf De Visser -->
+        <div class="flex flex-col items-center reveal-on-scroll">
+          <div class="cinematic-wrapper bg-white w-full aspect-video flex items-center justify-center mb-6 p-6 group overflow-hidden">
+            <img alt="Logo"
+              class="w-auto grayscale contrast-125 max-h-48 w-full h-full object-cover group-hover:scale-110 group-hover:grayscale-0 transition-all duration-[2000ms] ease-out"
+              src="https://lh3.googleusercontent.com/aida/ADBb0ujB_u1-y9E6KfIXFOP_g5f4m7M-lTuXcdD6ENpW9kLZrMkzQwT9hNtEsYCpegR-h-3EzKn_RtWPwkQ9eYeJMm1H844b8SZYHZwIGdBF-A3_eOl49_bSDpH6rrNbQPnfwx18dmUiT2wpR5mEWAKFVT3aY7m-G6FPRZOXOs3EZ1U9y8IZ-YRZibTM9XpcZSbU2iJd5md1Hsh34rM-kpyF2kVBnSnoOqlPsLa-98OgNthvgTDigrlgcQ83As3FEi3gwT5gWYGixoeyj4I" />
+          </div>
+          <div class="text-center">
+            <h4 class="font-bold text-lg mb-2">Afbouwbedrijf De Visser</h4>
+            <p class="text-on-surface-variant text-sm">T: 0636326243</p>
+            <p class="text-on-surface-variant text-sm">Email: afbouwbedrijfdevisser@hotmail.com</p>
+          </div>
+        </div>
+        <!-- JDV Elektrotechniek -->
+        <div class="flex flex-col items-center">
+          <div class="cinematic-wrapper bg-white w-full aspect-video flex items-center justify-center mb-6 p-6">
+            <img alt="JDV Elektrotechniek Logo"
+              class="w-auto grayscale contrast-125 max-h-48 w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida/ADBb0uj85PPFRkHfdTlW55srDnfFlXhd5Wy8SiRc0pISf1UnvDUZLA1_GoDzeB6TYwjq8AcL9RZhM9bP4Aw3AGQpncegoSjfw301c7eBBoYC3cjefTpu9C1SeMDxz7Cmk9k9WUf6tpvwz0nYVbhQcAixTNTXuJMXyCGQddaW1GPQUtdA5zsUnFjxZbllEYjqxq9A478MSa2L1cn16HqooMpNvAfHcKivFhTFC-jwgtNXCUQQIOBftWhjGe-KJRqZjILOCuy_ZqFZS7-8eYo" />
+          </div>
+          <div class="text-center">
+            <h4 class="font-bold text-lg mb-2">JDV Elektrotechniek</h4>
+            <p class="text-on-surface-variant text-sm">T: 0648396336</p>
+            <p class="text-on-surface-variant text-sm">Email: info@jdvelektrotechniek.nl</p>
+          </div>
+        </div>
+        <!-- Bouwbedrijf De Visser -->
+        <div class="flex flex-col items-center">
+          <div class="cinematic-wrapper bg-white w-full aspect-video flex items-center justify-center mb-6 p-6">
+            <img alt="Bouwbedrijf De Visser Logo"
+              class="w-auto grayscale contrast-125 max-h-48 w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOuO1pE-3o-F1_8uQ8u9y_9V6U5P_7r8w9x-z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9z9" />
+          </div>
+          <div class="text-center">
+            <h4 class="font-bold text-lg mb-2">Bouwbedrijf De Visser</h4>
+            <p class="text-on-surface-variant text-sm">Specialisatie: Bouw & Renovatie</p>
+            <p class="text-on-surface-variant text-sm">Email: info@bouwbedrijfdevisser.nl</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 md:py-section-gap px-6 md:px-margin-edge bg-surface-container-low text-center">
+      <h2 class="font-headline-lg text-headline-lg mb-4">Bent u benieuwd naar de mogelijkheden? </h2>
+      <p class="font-body-lg text-on-surface-variant mb-12">Vraag dan vrijblijvend een offerte aan.</p>
+      <a class="inline-block bg-white border-2 border-primary/20 px-14 py-4 rounded-full font-label-sm text-label-sm uppercase tracking-widest text-primary hover:border-primary hover:bg-primary hover:text-white shadow-[0_4px_20px_rgba(101,51,77,0.15)] hover:shadow-[0_10px_30px_rgba(101,51,77,0.3)] hover:-translate-y-1 transition-all duration-500"
+        href="mailto:Schildersbedrijfjorieke@gmail.com">
+        Direct contact opnemen
+      </a>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-tertiary py-32 text-white border-t border-white/5">
+    <div class="max-w-container-max mx-auto px-6 md:px-margin-edge grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
+      <div>
+        <h4 class="font-headline-md text-headline-md mb-8 text-white">Jorieke de Visser</h4>
+        <p class="font-body-md text-white/60 mb-10 leading-loose">Uw professionele schilder op Goeree-Overflakkee.
+          Toegewijd aan de kunst van het schilderen.</p>
+        <div class="flex gap-8">
+          <a class="text-white/40 hover:text-white transition-colors font-label-sm uppercase tracking-widest text-[10px]"
+            href="#">Instagram</a>
+          <a class="text-white/40 hover:text-white transition-colors font-label-sm uppercase tracking-widest text-[10px]"
+            href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="flex flex-col items-start md:items-center">
+        <img alt="Logo" class="h-24 w-auto object-contain mb-8 rounded-full shadow-lg"
+          src="./images/logo.jpg" />
+        <p class="font-label-sm text-white/30 text-[10px] tracking-widest uppercase">© 2024 Schildersbedrijf Jorieke de
+          Visser</p>
+      </div>
+      <div class="flex flex-col gap-6">
+        <h4 class="font-label-sm uppercase tracking-[0.2em] mb-4 text-white/50">Navigatie</h4>
+        <a class="font-body-md text-white/60 hover:text-white transition-colors" href="home.html">Home</a>
+        <a class="font-body-md text-white/60 hover:text-white transition-colors"
+          href="interior.html">Binnenschilderwerk</a>
+        <a class="font-body-md text-white/60 hover:text-white transition-colors"
+          href="exterior.html">Buitenschilderwerk</a>
+        <a class="font-body-md text-white/60 hover:text-white transition-colors" href="about.html">Over Jorieke</a>
+        <a class="font-body-md text-white/60 hover:text-white transition-colors" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const closeMenuBtn = document.getElementById('close-menu-btn');
+
+      function toggleMenu() {
+        mobileMenu.classList.toggle('hidden-nav');
+        document.body.classList.toggle('overflow-hidden');
+      }
+
+      if (mobileMenuBtn && closeMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+      }
+
+      // Close menu on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden-nav');
+          document.body.classList.remove('overflow-hidden');
+        });
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    });
+
+    let lastScrollY = window.scrollY;
+    const mainHeader = document.getElementById('main-header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // Scrolling down
+        mainHeader.style.transform = 'translateY(-100%)';
+      } else {
+        // Scrolling up
+        mainHeader.style.transform = 'translateY(0)';
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
+</body>
+
+</html>
