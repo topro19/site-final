@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Exterior Painting - Professional Services</title>
+  <!-- Tailwind CSS v3 CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          maxWidth: {
+            '8xl': '1600px',
+          },
+          "colors": {
+            "secondary-fixed-dim": "#c8c6c2",
+            "tertiary-fixed-dim": "#bdcabc",
+            "secondary-container": "#e1dfdb",
+            "surface": "#fdf9f0",
+            "inverse-primary": "#c4c7c8",
+            "surface-variant": "#e6e2d9",
+            "surface-container": "#f2ede4",
+            "primary-fixed": "#e0e3e4",
+            "background": "#fdf9f0",
+            "primary": "#181c1d",
+            "outline-variant": "#c4c7c8",
+            "on-primary-fixed": "#181c1d",
+            "on-secondary-fixed-variant": "#474744",
+            "on-surface-variant": "#434748",
+            "surface-bright": "#fdf9f0",
+            "secondary": "#5e5e5b",
+            "on-tertiary-container": "#8f9c8f",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed-dim": "#c4c7c8",
+            "on-background": "#1c1c16",
+            "inverse-on-surface": "#f5f0e7",
+            "surface-container-highest": "#e6e2d9",
+            "tertiary-container": "#28332a",
+            "surface-tint": "#5b5f60",
+            "secondary-fixed": "#e4e2dd",
+            "on-error": "#ffffff",
+            "inverse-surface": "#32302a",
+            "on-secondary-container": "#63635f",
+            "on-primary-container": "#95999a",
+            "surface-container-high": "#ece8df",
+            "tertiary-fixed": "#d9e6d8",
+            "outline": "#747879",
+            "surface-container-low": "#f7f3ea",
+            "on-primary": "#ffffff",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#dedad1",
+            "on-surface": "#1c1c16",
+            "on-tertiary-fixed-variant": "#3e4a3f",
+            "on-secondary-fixed": "#1b1c19",
+            "error-container": "#ffdad6",
+            "tertiary": "#131e15",
+            "on-primary-fixed-variant": "#434748",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#131e15",
+            "primary-container": "#2d3132",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "container-max": "1280px",
+            "element-gap": "32px",
+            "section-padding": "120px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "headline-lg": ["Newsreader"],
+            "headline-md": ["Newsreader"],
+            "display-lg": ["Newsreader"],
+            "body-lg": ["Hanken Grotesk"],
+            "label-sm": ["Hanken Grotesk"],
+            "headline-lg-mobile": ["Newsreader"],
+            "body-md": ["Hanken Grotesk"]
+          }
+        },
+      },
+    }
+  </script>
+  <style data-purpose="custom-fonts">
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,300;400;500&display=swap');
+
+    body {
+      font-family: 'Hanken Grotesk', sans-serif;
+      background-color: #fdf9f0;
+      color: #1c1c16;
+    }
+  </style>
+  <style data-purpose="layout-adjustments">
+    .rounded-xl-plus {
+      border-radius: 1.5rem;
+    }
+
+    .hero-container {
+      background-color: #e1dfdb;
+    }
+
+    .image-border {
+      border: 1px solid #c4c7c8;
+    }
+  </style>
+  <style data-stitch-cursor=""></style>
+  <style data-stitch-scroll-lock=""></style>
+  <style>
+    .scroll-fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      will-change: opacity, transform;
+    }
+
+    .scroll-fade-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile Menu Animation */
+    #mobile-menu {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #mobile-menu.hidden-nav {
+      transform: translateX(100%);
+    }
+  </style>
+</head>
+
+<body class="bg-[#f5e2de] text-[#1d3a4d] transition-colors duration-500 ">
+  <!-- BEGIN: Page Header/Browser Bar -->
+  <!-- BEGIN: MainHeader -->
+  <header class="w-full py-4 sticky top-0 z-50 bg-transparent transition-all duration-300" id="main-header"
+    data-purpose="navigation-container">
+    <div class="w-full px-4 md:px-12">
+      <nav
+        class="flex items-center justify-between px-4 md:px-8 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg"
+        data-purpose="main-nav">
+        <!-- Logo -->
+        <div class="text-xl font-bold tracking-tight shrink-0" data-purpose="logo">
+          <a href="/">
+            <img alt="Schildersbedrijf Jorieke de Visser Logo"
+              class="h-10 w-10 rounded-full object-cover border-2 border-white/40 shadow-lg"
+              src="https://lh3.googleusercontent.com/aida/ADBb0uh9ScNn8g9r5Wmn69Qkgab6NOeLwHr9q4OhFkaGKKm3Ltb5Ak4O6bUHEN4JtEUfZ_-i9-twxiGYzWuMbrhKnKtVbttOEuX8fDf9I3MAh9xPWxvik8jIIpGcvmQDepFsbbKsMysGI7GEwuDz6kGa70HGvdSyKVsCodfnsWVcSBBeHaEpfMm8BX-Ez7fwh1PYa7xYBq2663yzSAxDIOE4h00BTXd3TTdkCPNAneAyCLi6am1Xh_imxnonF5eu4rFy-tDiSHXdQAXRytI">
+          </a>
+        </div>
+
+        <!-- Desktop Pill Navigation -->
+        <div class="hidden lg:flex items-center gap-1 bg-black p-1 rounded-full border border-gray-800"
+          data-purpose="pill-nav-items">
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="/">Home</a>
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="/interior.html">Binnenschilderwerk</a>
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="/exterior.html">Buitenschilderwerk</a>
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="/about.html">Over Jorieke</a>
+          <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
+            href="/contact.html">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn"
+          class="lg:hidden p-2 text-[#1d3a4d] hover:bg-white/20 rounded-full transition-colors"
+          aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#f5e2de] hidden-nav lg:hidden">
+      <div class="flex flex-col h-full p-8">
+        <div class="flex justify-between items-center mb-12">
+          <div class="text-xl font-bold tracking-tight">Jorieke de Visser</div>
+          <button id="close-menu-btn" class="p-2 hover:bg-black/5 rounded-full transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="flex flex-col space-y-6 text-3xl font-light tracking-tight">
+          <a href="/" class="hover:italic hover:translate-x-4 transition-all duration-300">Home</a>
+          <a href="/interior.html"
+            class="hover:italic hover:translate-x-4 transition-all duration-300">Binnenschilderwerk</a>
+          <a href="/exterior.html"
+            class="hover:italic hover:translate-x-4 transition-all duration-300">Buitenschilderwerk</a>
+          <a href="/about.html" class="hover:italic hover:translate-x-4 transition-all duration-300">Over Jorieke</a>
+          <a href="/contact.html" class="hover:italic hover:translate-x-4 transition-all duration-300">Contact</a>
+        </nav>
+        <div class="mt-auto pt-12 border-t border-black/10">
+          <p class="text-sm uppercase tracking-widest text-gray-500 mb-4">Contact</p>
+          <a href="mailto:Schildersbedrijfjorieke@gmail.com" class="text-lg block">Schildersbedrijfjorieke@gmail.com</a>
+          <a href="tel:0637279700" class="text-lg block mt-2">06-37279700</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- END: Page Header/Browser Bar -->
+  <main class=" space-y-24 px-4 md:px-8 pb-24">
+    <!-- BEGIN: Hero Section -->
+    <section class="hero-container rounded-xl-plus p-6 md:p-12 flex flex-col lg:flex-row items-center gap-10 md:gap-8"
+      data-purpose="hero">
+      <div class="flex-1 space-y-6 text-center lg:text-left">
+        <p class="text-base md:text-lg 2xl:text-2xl leading-relaxed text-[#1d3a4d]/80 max-w-prose mx-auto lg:mx-0">
+          Goed buitenschilderwerk is essentieel voor de uitstraling én bescherming van uw woning of bedrijfspand. Door
+          weersinvloeden zoals regen, zon en vorst krijgt het schilderwerk buiten veel te verduren. Met professioneel
+          buitenschilderwerk voorkomt u houtrot, slijtage en dure herstelkosten, terwijl uw pand er weer verzorgd en
+          fris uitziet.
+        </p>
+        <div class="pt-4">
+          <button
+            class="bg-white/60 backdrop-blur-xl backdrop-saturate-150 border border-white/40 px-8 py-4 rounded-full text-sm md:text-base 2xl:text-2xl font-medium hover:bg-white/80 shadow-md text-[#1d3a4d] transition-all duration-300">
+            Mail ons voor service & onderhoud
+          </button>
+        </div>
+      </div>
+      <div class="flex-shrink-0 w-full lg:w-1/3">
+        <img alt="Professional House Painting Detail"
+          class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl w-full h-64 md:h-auto rounded-2xl shadow-lg object-cover block"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhI9pQgGouOznjD0mMpQJcsIMurWuIhj7CRdwyh6qNLbBInUrO8pZN4SiWav9UMUGuzf9-Lj60NSX8HdPRgcRSNdLRkwRTMlFQtG5V0ktGhIfrL0itWPa3Q3xSNIo8abSvgOK3OVw-FvAQYUkCW_QMIgxL-u2TTzUO9W_CC13YSLYC_eCGLxPW3fwxRCDjOmmyYuEIODdBbY86miJhU7UZ43l8Zl23lvBaUodXpHRvpu-IA44ndjZLcUZ2dU-PLQCgCiXAcrN7VJw">
+      </div>
+    </section>
+    <!-- END: Hero Section -->
+    <!-- BEGIN: Service Grid Row 1 -->
+    <section class="grid grid-cols-1 md:grid-cols-2 items-start gap-8" data-purpose="services-row-1">
+      <div class="space-y-4">
+        <h3
+          class="text-sm 2xl:text-base 2xl:text-lg 2xl:text-xl 2xl:text-2xl font-medium uppercase tracking-wider text-slate-500">
+          Houtwerk</h3>
+        <div class="rounded-xl-plus overflow-hidden">
+          <img alt="Woodwork detailed view"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full"
+            src="./IMAGES/drill.png">
+        </div>
+        <p class="text-body-md mt-4 text-[#1d3a4d]/80 leading-relaxed">Wij verzorgen het schilderen en onderhouden van
+          al het buitenhoutwerk, zoals kozijnen, deuren, boeidelen en daklijsten. Door een goede voorbereiding,
+          vakkundige afwerking en het gebruik van hoogwaardige verf zorgen wij voor optimale bescherming tegen
+          weersinvloeden. Zo blijft uw houtwerk langer in goede staat en ziet het er weer strak en verzorgd uit.</p>
+      </div>
+      <div class="space-y-4">
+        <h3
+          class="text-sm 2xl:text-base 2xl:text-lg 2xl:text-xl 2xl:text-2xl font-medium uppercase tracking-wider text-slate-500">
+          Hoogwerker / Steiger</h3>
+        <div class="rounded-xl-plus overflow-hidden">
+          <img alt="Scaffolding on a large house"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full h-auto"
+            src="./IMAGES/scaff.png">
+        </div>
+        <p class="text-body-md mt-4 text-[#1d3a4d]/80 leading-relaxed">Voor werkzaamheden op hoogte draai ik mijn hand
+          niet om. Steigers of een hoogwerker inzetten is voor mij geen probleem. Juist hiermee kunnen ook lastig
+          bereikbare plekken veilig en efficiënt worden geschilderd, zoals het hoge gevels, dakkapellen en boeidelen.
+          Door juiste materieel te gebruiken werk ik nauwkeurig, snel en volgens de geldende veiligheidsnormen. Dit
+          zorgt voor een strak eindresultaat en minimale overlast voor u.</p>
+      </div>
+    </section>
+    <!-- END: Service Grid Row 1 -->
+    <!-- BEGIN: Service Grid Row 2 -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start" data-purpose="services-row-2">
+      <div class="space-y-4">
+        <h3
+          class="text-sm 2xl:text-base 2xl:text-lg 2xl:text-xl 2xl:text-2xl font-medium uppercase tracking-wider text-slate-500">
+          Houtrot</h3>
+        <div class="rounded-xl-plus overflow-hidden">
+          <img alt="Window with wood rot treatment"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmoUFLAKk2OfghfYC-eiiY_87rH-DUZI1OugxpjqvvRrxXT2BXKgtEvhnZUFuAU22-XZAMD3Re3vU86pGGKNRV81kAvLUX-QyR1F3V-FoLOAmzsoF4Eex2MnGvv5uAZGzZ4lvVdi2U29M-S2P8b1aeDm2WDh7rRQ6rcewJxTI6aVXNQjUnJU69XdmZduboKUe41x5cGOJZBvoKWKeGw-5iH_ueohV6Xa4kbxkK1qoOckgtdGIu0ctOvRQ2m8KyTWx98KmQDNHuhm4">
+        </div>
+        <p class="text-body-md mt-4 text-[#1d3a4d]/80 leading-relaxed">Tijdens werkzaamheden aan uw woning of pand kan
+          houtrot aan het licht komen. Dit ontstaat wanneer hout langdurig vochtig blijft. Schimmels tasten het hout
+          aan, waardoor het zacht, bros en minder sterk wordt. Houtrot komt vaak voor bij kozijnen, daklijsten, deuren
+          en andere buitentoepassingen.
+
+          Tekenen van houtrot zijn zachte plekken, verkleuring en loslatende verf. Om houtrot te voorkomen zijn goed
+          schilderwerk, voldoende ventilatie en het snel verhelpen van vochtproblemen belangrijk. Bij lichte aantasting
+          kan reparatie mogelijk zijn. Dit kan Schildersbedrijf De Visser voor u verzorgen. Bij ernstige houtrot is
+          vervanging meestal nodig en zal er een timmerman moeten worden ingeschakeld. Dit kan uw eigen timmerman zijn,
+          of ik kan voor u contact opnemen met een timmerman uit mijn netwerk.
+
+          Zo zorgen wij ervoor dat uw schilderwerk er weer strak verzorgd en in een gezonde staat bij staat.</p>
+      </div>
+      <div class="space-y-4">
+        <h3
+          class="text-sm 2xl:text-base 2xl:text-lg 2xl:text-xl 2xl:text-2xl font-medium uppercase tracking-wider text-slate-500">
+          Houtwerk</h3>
+        <div class="rounded-xl-plus overflow-hidden">
+          <img alt="Newly painted window frame detail"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full h-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpTSYfE0RgcfBJU5gcJ0JKM35IzCsAbZhbGy4BgcMl3Rjtsxtn2Y97Yy4klFND1cFtQ07QCjUaM63yE5NqLaj2wCvVfXNGVLgtlOcQ3SAxRXRIh1B0Ixb296aQhSJejLWKYWCqo9AkmL1y4SUlceqRjQTOv1DMuHOnFcojpvKg83APWxzUow3KxaiQJJpr1YR34mRIWo21wE_-Hthymfl8Ud9n2w6f58FyMCLU0OHvJpvl6giU2H6TEBO0-Kz-VVJtp4dCrFDHj7w">
+        </div>
+        <p class="text-body-md mt-4 text-[#1d3a4d]/80 leading-relaxed">Wij verzorgen het schilderen en onderhouden van
+          al het buitenhoutwerk, zoals kozijnen, deuren, boeidelen en daklijsten. Door een goede voorbereiding,
+          vakkundige afwerking en het gebruik van hoogwaardige verf zorgen wij voor optimale bescherming tegen
+          weersinvloeden. Zo blijft uw houtwerk langer in goede staat en ziet het er weer strak en verzorgd uit.</p>
+      </div>
+    </section>
+    <!-- END: Service Grid Row 2 -->
+    <!-- BEGIN: Project Gallery Section -->
+    <section class="pt-12" data-purpose="editorial-gallery">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-10 items-start">
+        <div class="rounded-2xl overflow-hidden bg-white shadow-sm">
+          <img alt="Exterior facade painting"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full h-auto block"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn2vN_iXuyAMHbQSGc--D3xkaImWkjPSW_Ss6INRjaUj9lnacOVx6rXM59NPo9rUnYhtG7L3ujkDdtZMtzyG1KZGuvW1FaGRUY7sGU14rbTIb2ES8LOQP_TPE8W87yxqWptZ_Psh5YH1kMn5-tsz2JF1kFQTp413cM9-RKXrHfgylV94DJkhLHOxl3_gwkNd6f4xnuwym1XHGqujyEUKQqZpjnqtxDiwBSu2IBB-eFXC_GWi5rLVG47ksvz1uUdGa8REzXbiQ20cg">
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-sm">
+          <img alt="Green house front door"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full h-auto block"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz4y4p6D-KIQ7wIRsnmSDc7YzHZAtfDranho85p8rupW1nJmG0LPLAyfgSCTS_YnPz-F9VH6nMRO_evAe0nrlshl5-2ak3SrOt9M4xIV-Kf5KuyfB-U6tpK6C5BryzSnuXfQMnmw7TeApQLLYbCrH_x3_HPBDBNjw15Ai6HjYr-7WwTnYjIFPpfnXr1IpHrTEMTVBFOZkA_wykrJqBtnLmeW79smmPD99YGCX2Vj5GZ2-IQVHFk72iy1aO7XC-qu1q38DYVBHtHcs">
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-sm">
+          <img alt="Newly painted white dormer window"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full h-auto block"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxt64UWYzlrygk8G-tWCOAtYFAs_9lxTr01NhdpsGrd0rrPSdpJDPLIsieHYv9KBzuankjiLV6ORF93Nh55fqYmTkSL2zoGmsOoB1ziWQp3U9tYjgsW_pzb23HSa-9c4BJJu_qsl9pLYx7Qc3CswkMN1eakED8uSKytgjgY7TyEuB9LbmBSfk62B89j2KQyRUD9duGpLfvg4aY0sYfQ-sMcUo8wZeN_tTNsjOOjITCuxbTzXSOyWtAlRHvV0Q-Z8FvaxwuhR7rP28">
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-sm">
+          <img alt="House exterior painting project detail"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full h-auto block"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq6_IK_588SkKBHGKIXESEB6AggKUnwIGAZPlvT7bRS9saYVn8IPkKdKaywXmeU7uq5Kj4iCtDVYva9vvph72rGAWshooNPYjrrK2DDk6DYDEgSs0FU0XINV4Eh4AwuVj4NOItKIwwrAUpyuTujbhggA86qYDp616ZGIviKBIzwzY_Atc-9BjzYVp4yFXIqidwfahsdHzCNmaGB_YL0GfuTOgPxTkpjEw6Njtnlm3xFTeIv76tjVsfQ3vPxHN_DlyjCqA4ouCAJ78">
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-sm">
+          <img alt="Exterior painting detail - cornice"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full h-auto block"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4GoPXEMBR2KETl2eOl5-xXu0CShw0QUNbaGbHEL1nHMrOEvp_Ry2QTLcfmNY2wgdkr4na6n0VIzUQAuKn0Izfb_qGVlw0vXuZEaQ-jqcUv5LVCnDELxvwhCPz-CtC7JgiO8HoGrPslu74ZE_IeKL5Iho2dIZbRtpGfUr1r89rmTuybl97YTS7xf2jXRlVcNeDBxE7w20CwS-Gn9dYQ7IDmkn5HKjRcDyeroEAb2XmMjKUPwZhklv5dAWPr7uM6IHaLe-Orlw6AcQ">
+        </div>
+        <div class="rounded-2xl overflow-hidden bg-white shadow-sm" style="transform: translateY(-20px);">
+          <img alt="Dormer window painting detail"
+            class=" bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-2 rounded-2xl  w-full h-auto block"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHiNmDYgfD0UjX3Syy6VCFMR4C4drtpoqBgqev6_z8dOnDITw_c7RDWhTcCdLqeMn0-7CYfLqOPqITJIYv4io5ZKzSRonbkM9mSzYJHwJ1Pa0C0X9NPo9OoNbtmNkJrFQjVHVcLO376vyKqbeeJvi_GtLr1W296l9l1tVU1UCN5WR0HLc12pL1ykHta2uvLkKLlBkWFYcbbF-NbAo8xT7xAGlG_nWjX6apjlIlAoVaszOnlBrp3ocEuCxNgyBzEY0KB8PNX7ywgfU"
+            style="transform: translateY(-20px);">
+        </div>
+      </div>
+    </section>
+    <!-- END: Project Gallery Section -->
+    <!-- BEGIN: CTA Section -->
+    <section class="text-center py-12 md:py-20 space-y-8 px-6" data-purpose="contact-cta">
+      <div class="space-y-2">
+        <p class="text-base md:text-lg 2xl:text-2xl text-slate-600">Bent u benieuwd naar de mogelijkheden?</p>
+        <p class="text-base md:text-lg 2xl:text-2xl text-slate-600">Vraag dan vrijblijvend een offerte aan.</p>
+      </div>
+      <a href="/contact.html" class="inline-block">
+        <button
+          class="border border-zinc-700 bg-[#3f122f] text-white px-10 py-4 rounded-full text-sm md:text-base 2xl:text-2xl font-medium hover:bg-[#4a2c59] transition shadow-md">
+          Direct contact opnemen</button>
+      </a>
+    </section>
+    <!-- END: CTA Section -->
+  </main>
+  <!-- BEGIN: Footer -->
+  <div class="h-1 bg-gradient-to-r from-transparent via-[#6a2153] to-transparent opacity-50"></div>
+  <footer
+    class="relative py-12 mt-20 bg-[#050505] footer-reveal opacity-0 translate-y-12 transition-all duration-1000 ease-out text-gray-400 overflow-hidden"
+    data-purpose="main-footer">
+    <div class="w-full px-6 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <!-- Left Column: Contact -->
+        <div class="space-y-4">
+          <h4 class="font-bold uppercase text-[10px] tracking-[0.3em] text-[#6a2153] font-bold">CONTACT</h4>
+          <div class="text-sm 2xl:text-base 2xl:text-lg 2xl:text-xl 2xl:text-2xl leading-loose text-gray-400">
+            <p class="font-medium text-white">Schildersbedrijf Jorieke de Visser</p>
+            <p class="">Dorpsstraat 123</p>
+            <p class="">3247 AB, Dirksland</p>
+            <p class="mt-1"><a class="hover:text-white transition-colors duration-300"
+                href="tel:0637279700">06-37279700</a></p>
+            <p class="mt-2"><a class="hover:text-white transition-colors duration-300"
+                href="mailto:Schildersbedrijfjorieke@gmail.com">Schildersbedrijfjorieke@gmail.com</a></p>
+          </div>
+        </div>
+        <!-- Center Column: Logo -->
+        <div class="flex flex-col items-center justify-center space-y-2">
+          <div class="text-2xl font-bold tracking-tight"><img alt="Schildersbedrijf Jorieke de Visser Logo"
+              class="h-24 w-24 object-cover rounded-full border-2 border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500"
+              src="https://lh3.googleusercontent.com/aida/ADBb0uh9ScNn8g9r5Wmn69Qkgab6NOeLwHr9q4OhFkaGKKm3Ltb5Ak4O6bUHEN4JtEUfZ_-i9-twxiGYzWuMbrhKnKtVbttOEuX8fDf9I3MAh9xPWxvik8jIIpGcvmQDepFsbbKsMysGI7GEwuDz6kGa70HGvdSyKVsCodfnsWVcSBBeHaEpfMm8BX-Ez7fwh1PYa7xYBq2663yzSAxDIOE4h00BTXd3TTdkCPNAneAyCLi6am1Xh_imxnonF5eu4rFy-tDiSHXdQAXRytI">
+          </div>
+        </div>
+        <!-- Right Column: Navigation -->
+        <div class="md:text-right space-y-4">
+          <h4 class="font-bold uppercase text-[10px] tracking-[0.3em] text-[#6a2153] font-bold">NAVIGATIE</h4>
+          <nav class="flex flex-col space-y-2 text-sm 2xl:text-base 2xl:text-lg 2xl:text-xl 2xl:text-2xl text-gray-400">
+            <a class="hover:text-white transition-colors duration-300" href="/">Home</a>
+            <a class="hover:text-white transition-colors duration-300" href="/interior.html">Binnenschilderwerk</a>
+            <a class="hover:text-white transition-colors duration-300" href="/exterior.html">Buitenschilderwerk</a>
+            <a class="hover:text-white transition-colors duration-300" href="/about.html">Over Jorieke</a>
+            <a class="hover:text-white transition-colors duration-300" href="/contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <!-- Bottom Legal (Optional for extra minimal touch) -->
+      <div
+        class="mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] text-gray-600 uppercase tracking-[0.2em] border-t border-white/5 pt-12">
+        <p class="">© 2023 Schildersbedrijf Jorieke de Visser</p>
+        <div class="flex gap-6">
+          <a class="hover:text-gray-600" href="/privacy.html">Privacybeleid</a>
+          <a class="hover:text-gray-600" href="/terms.html">Algemene Voorwaarden</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END: Footer -->
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const closeMenuBtn = document.getElementById('close-menu-btn');
+
+      function toggleMenu() {
+        mobileMenu.classList.toggle('hidden-nav');
+        document.body.classList.toggle('overflow-hidden');
+      }
+
+      mobileMenuBtn.addEventListener('click', toggleMenu);
+      closeMenuBtn.addEventListener('click', toggleMenu);
+
+      // Close menu on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden-nav');
+          document.body.classList.remove('overflow-hidden');
+        });
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+      document.querySelectorAll('h1, h2, h3, p, .scroll-trigger, section > div').forEach(el => {
+        el.classList.add('scroll-fade-up');
+        observer.observe(el);
+      });
+    });
+  </script>
+
+  <script>
+    let lastScrollY = window.scrollY;
+    const header = document.getElementById('main-header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        // Scrolling down
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        // Scrolling up
+        header.style.transform = 'translateY(0)';
+      }
+      lastScrollY = window.scrollY;
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const footer = document.querySelector('.footer-reveal');
+      if (footer) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove('opacity-0', 'translate-y-12');
+              entry.target.classList.add('opacity-100', 'translate-y-0');
+            }
+          });
+        }, { threshold: 0.1 });
+        observer.observe(footer);
+      }
+    });
+  </script>
+</body>
+
+</html>
