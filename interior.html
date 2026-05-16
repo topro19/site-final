@@ -176,7 +176,7 @@
     <header class="w-full py-4 sticky top-0 z-50 bg-transparent" id="main-header">
         <div class="w-full px-4 md:px-12">
             <nav
-                class="flex items-center justify-between px-4 md:px-8 py-2 bg-primary lg:bg-transparent backdrop-blur-3xl saturate-150 rounded-full border border-white/40 shadow-[0_8px_32px_0_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.3)]">
+                class="flex items-center justify-between px-4 md:px-8 py-2 bg-primary lg:bg-transparent lg:backdrop-blur-3xl lg:saturate-150 rounded-full border border-white/40 shadow-[0_8px_32px_0_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.3)]">
                 <!-- Logo -->
                 <div class="text-xl font-bold tracking-tight shrink-0">
                     <a href="home.html">
@@ -212,44 +212,44 @@
             </nav>
         </div>
 
-        <!-- Mobile Navigation Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 z-[100] bg-primary hidden-nav lg:hidden">
-            <div class="flex flex-col h-full p-8">
-                <div class="flex justify-between items-center mb-12">
-                    <div class="text-xl font-bold tracking-tight text-white">Jorieke de Visser</div>
-                    <button id="close-menu-btn" class="p-2 text-white hover:bg-black/5 rounded-full transition-colors">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <nav class="flex flex-col space-y-6 text-3xl font-light tracking-tight text-white/90">
-                    <a href="home.html"
-                        class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
-                            class="mr-4 text-lg">🖌️</span>Home</a>
-                    <a href="interior.html"
-                        class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
-                            class="mr-4 text-lg">🖌️</span>Binnenschilderwerk</a>
-                    <a href="exterior.html"
-                        class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
-                            class="mr-4 text-lg">🖌️</span>Buitenschilderwerk</a>
-                    <a href="about.html"
-                        class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
-                            class="mr-4 text-lg">🖌️</span>Over Jorieke</a>
-                    <a href="contact.html"
-                        class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
-                            class="mr-4 text-lg">🖌️</span>Contact</a>
-                </nav>
-                <div class="mt-auto pt-12 border-t border-white/10">
-                    <p class="text-sm uppercase tracking-widest text-white/50 mb-4">Contact</p>
-                    <a href="mailto:Schildersbedrijfjorieke@gmail.com"
-                        class="text-lg block text-white">Schildersbedrijfjorieke@gmail.com</a>
-                    <a href="tel:0637279700" class="text-lg block mt-2 text-white">06-37279700</a>
-                </div>
+    </header>
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-primary hidden-nav lg:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex justify-between items-center mb-12">
+                <div class="text-xl font-bold tracking-tight text-white">Jorieke de Visser</div>
+                <button id="close-menu-btn" class="p-2 text-white hover:bg-black/5 rounded-full transition-colors">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-6 text-3xl font-light tracking-tight text-white/90">
+                <a href="home.html"
+                    class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+                        class="mr-4 text-lg">🖌️</span>Home</a>
+                <a href="interior.html"
+                    class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+                        class="mr-4 text-lg">🖌️</span>Binnenschilderwerk</a>
+                <a href="exterior.html"
+                    class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+                        class="mr-4 text-lg">🖌️</span>Buitenschilderwerk</a>
+                <a href="about.html"
+                    class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+                        class="mr-4 text-lg">🖌️</span>Over Jorieke</a>
+                <a href="contact.html"
+                    class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
+                        class="mr-4 text-lg">🖌️</span>Contact</a>
+            </nav>
+            <div class="mt-auto pt-12 border-t border-white/10">
+                <p class="text-sm uppercase tracking-widest text-white/50 mb-4">Contact</p>
+                <a href="mailto:Schildersbedrijfjorieke@gmail.com"
+                    class="text-lg block text-white">Schildersbedrijfjorieke@gmail.com</a>
+                <a href="tel:0637279700" class="text-lg block mt-2 text-white">06-37279700</a>
             </div>
         </div>
-    </header>
+    </div>
     <!-- Hero Section -->
     <header class="pt-32 md:pt-40 pb-16 md:pb-section-gap px-6 md:px-margin-edge max-w-container-max mx-auto">
         <div class="grid grid-cols-12 gap-gutter items-end">
