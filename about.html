@@ -105,8 +105,10 @@
       animation-delay: 0.6s;
     }
 
-    html {
+    html, body {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     ::selection {
@@ -162,6 +164,8 @@
 
     #mobile-menu.hidden-nav {
       transform: translateX(100%);
+      pointer-events: none;
+      visibility: hidden;
     }
 
     #main-header {
@@ -196,7 +200,7 @@
           <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
             href="about.html"><span class="mr-2 text-[10px]">🖌️</span>Over Jorieke</a>
           <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
-            href="contact.html"><span class="mr-2 text-[10px]">🖌️</span>Contact</a>
+            href="contact.html"><span class="mr-2 text-[10px]">🖌️</span>Contactformulier</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -235,13 +239,13 @@
             class="mr-4 text-lg">🖌️</span>Over Jorieke</a>
         <a href="contact.html"
           class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
-            class="mr-4 text-lg">🖌️</span>Contact</a>
+            class="mr-4 text-lg">🖌️</span>Contactformulier</a>
       </nav>
       <div class="mt-auto pt-12 border-t border-white/10">
         <p class="text-sm uppercase tracking-widest text-white/50 mb-4">Contact</p>
         <a href="mailto:Schildersbedrijfjorieke@gmail.com"
           class="text-lg block text-white">Schildersbedrijfjorieke@gmail.com</a>
-        <a href="tel:0637279700" class="text-lg block mt-2 text-white">06-37279700</a>
+        <a href="tel:+31637279700" class="text-lg block mt-2 text-white">+31 6 37279700</a>
       </div>
     </div>
   </div>
@@ -270,8 +274,8 @@
               nog verder kan uitbreiden.</p>
           </div>
         </div>
-        <div class="lg:col-span-5 lg:col-start-8 order-1 lg:order-2 reveal-on-scroll reveal-delay-1 group">
-          <div class="cinematic-wrapper aspect-[3/4] overflow-hidden">
+        <div class="lg:col-span-5 lg:col-start-8 order-1 lg:order-2 reveal-on-scroll reveal-delay-1 group min-w-0 max-w-full">
+          <div class="cinematic-wrapper aspect-[3/4] w-full max-w-[420px] min-w-0 max-w-full mx-auto lg:mr-0 overflow-hidden">
             <img alt="Portrait of Jorieke de Visser"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[3000ms] ease-out"
               src="./images/self2.png" />
@@ -336,7 +340,7 @@
     <section class="py-16 md:py-section-gap px-6 md:px-margin-edge bg-surface-container-low text-center">
       <h2 class="font-headline-lg text-headline-lg mb-4">Bent u benieuwd naar de mogelijkheden? </h2>
       <p class="font-body-lg text-on-surface-variant mb-12">Vraag dan vrijblijvend een offerte aan.</p>
-      <a class="inline-block bg-white border-2 border-primary/20 px-14 py-4 rounded-full font-label-sm text-label-sm uppercase tracking-widest text-primary hover:border-primary hover:bg-primary hover:text-white shadow-[0_4px_20px_rgba(101,51,77,0.15)] hover:shadow-[0_10px_30px_rgba(101,51,77,0.3)] hover:-translate-y-1 transition-all duration-500"
+      <a class="inline-block bg-white border-2 border-primary/20 px-6 md:px-14 py-3 md:py-4 rounded-full font-label-sm text-label-sm uppercase tracking-widest text-primary hover:border-primary hover:bg-primary hover:text-white shadow-[0_4px_20px_rgba(101,51,77,0.15)] hover:shadow-[0_10px_30px_rgba(101,51,77,0.3)] hover:-translate-y-1 transition-all duration-500"
         href="mailto:Schildersbedrijfjorieke@gmail.com">
         Direct contact opnemen
       </a>

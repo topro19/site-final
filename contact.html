@@ -104,8 +104,10 @@
             animation-delay: 0.6s;
         }
 
-        html {
+        html, body {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         ::selection {
@@ -161,6 +163,8 @@
 
         #mobile-menu.hidden-nav {
             transform: translateX(100%);
+            pointer-events: none;
+            visibility: hidden;
         }
 
         #main-header {
@@ -196,7 +200,7 @@
                     <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
                         href="about.html"><span class="mr-2 text-[10px]">🖌️</span>Over Jorieke</a>
                     <a class="px-4 py-1.5 rounded-full transition flex items-center text-sm font-medium text-white hover:bg-white/20"
-                        href="contact.html"><span class="mr-2 text-[10px]">🖌️</span>Contact</a>
+                        href="contact.html"><span class="mr-2 text-[10px]">🖌️</span>Contactformulier</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -239,37 +243,27 @@
                         class="mr-4 text-lg">🖌️</span>Over Jorieke</a>
                 <a href="contact.html"
                     class="hover:italic hover:translate-x-4 transition-all duration-300 flex items-center"><span
-                        class="mr-4 text-lg">🖌️</span>Contact</a>
+                        class="mr-4 text-lg">🖌️</span>Contactformulier</a>
             </nav>
             <div class="mt-auto pt-12 border-t border-white/10">
                 <p class="text-sm uppercase tracking-widest text-white/50 mb-4">Contact</p>
                 <a href="mailto:Schildersbedrijfjorieke@gmail.com"
                     class="text-lg block text-white">Schildersbedrijfjorieke@gmail.com</a>
-                <a href="tel:0637279700" class="text-lg block mt-2 text-white">06-37279700</a>
+                <a href="tel:+31637279700" class="text-lg block mt-2 text-white">+31 6 37279700</a>
             </div>
         </div>
     </div>
-    <main class="pt-40">
-        <!-- Hero Section -->
-        <section class="max-w-container-max mx-auto px-6 md:px-margin-edge pt-8 md:pt-0">
-            <div class="grid grid-cols-12 gap-gutter items-end">
-                <div class="col-span-12 md:col-span-8 reveal-on-scroll">
-                    <h1 class="font-display-xl text-display-xl text-primary mb-unit">Inquiry &amp; Consultation</h1>
-                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Elk oppervlak vertelt een
-                        verhaal. Wij zorgen ervoor dat uw verhaal met precisie, respect en een compromisloze oog voor
-                        detail wordt verteld.</p>
-                </div>
-                <div class="col-span-12 md:col-span-4 flex justify-end">
-                    <div class="w-1 px-px h-32 bg-outline-variant hidden md:block"></div>
-                </div>
-            </div>
-        </section>
+    <main class="pt-32 md:pt-40">
         <!-- Main Content Grid -->
-        <section class="mt-16 md:mt-section-gap max-w-container-max mx-auto px-6 md:px-margin-edge pb-16 md:pb-section-gap">
+        <section class="max-w-container-max mx-auto px-6 md:px-margin-edge pb-16 md:pb-section-gap">
             <div class="flex flex-col md:flex-row gap-gutter">
                 <!-- Left: Form -->
                 <div class="w-full md:w-5/12 space-y-12">
                     <div class="reveal-on-scroll">
+                        <h1 class="font-display-xl text-headline-lg md:text-display-xl text-primary mb-8 leading-tight break-words">Inquiry &<br />Consultation</h1>
+                        <p class="font-body-lg text-on-surface-variant mb-16 max-w-2xl leading-relaxed">
+                            Elk oppervlak vertelt een verhaal. Wij zorgen ervoor dat uw verhaal met precisie, respect en een compromisloze oog voor detail wordt verteld.
+                        </p>
                         <h2 class="font-headline-md text-headline-md text-primary mb-8">Vertel ons over uw project</h2>
                         <form action="https://formspree.io/f/mdkaaqon" method="POST" class="space-y-8">
                             <div class="relative reveal-on-scroll reveal-delay-1">
@@ -312,12 +306,12 @@
                             </button>
                         </form>
                     </div>
-                    <div class="pt-16 border-t border-outline-variant/30 grid grid-cols-2 gap-gutter">
+                    <div class="pt-16 border-t border-outline-variant/30 grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-gutter">
                         <div>
                             <h3 class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-4">Direct
                                 Contact</h3>
-                            <p class="font-body-md text-on-surface">06-37279700</p>
-                            <p class="font-body-md text-on-surface">Schildersbedrijfjorieke@gmail.com</p>
+                            <p class="font-body-md text-on-surface"><a href="tel:+31637279700" class="hover:underline">+31 6 37279700</a></p>
+                            <p class="font-body-md text-on-surface break-words">Schildersbedrijfjorieke@gmail.com</p>
                         </div>
                         <div>
                             <h3 class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-4">Regio
